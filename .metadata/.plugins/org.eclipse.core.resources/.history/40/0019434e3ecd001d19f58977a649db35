@@ -1,0 +1,27 @@
+package edu.pnu.service;
+
+import java.sql.DriverManager;
+import java.util.List;
+
+import edu.pnu.DAO.MemberDAO;
+import edu.pnu.domain.Member;
+
+public class Memberservice {
+	MemberDAO memberDAO = new MemberDAO();
+	/*
+	public Memberservice() {
+		Class.forname(null)
+		DriverManager.getConnection(null;)
+	}
+	*/
+	public List<Member> getMembers() {
+		return memberDAO.getMembers();
+	}
+	public Member getMember() {
+		return memberDAO.getMember(null);
+	}
+	public Member addMember() {
+		// TODO Auto-generated method stub
+		return memberDAO.addMember(getMember());
+	}
+}

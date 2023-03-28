@@ -1,0 +1,10 @@
+package edu.pnu.service;
+
+import edu.pnu.DAO.MemberDAO;
+
+public class Memberservice {
+	MemberDAO memberDAO = new MemberDAO();
+	public String getMembers() {
+		return memberDAO.getMembers();
+	}
+}

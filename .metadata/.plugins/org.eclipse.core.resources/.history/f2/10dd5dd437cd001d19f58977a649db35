@@ -1,0 +1,94 @@
+package edu.pnu.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.List;
+
+import edu.pnu.domain.Member;
+
+public class MemberDAO {
+	
+	public Connection con;
+	public PreparedStatement psmt;
+	public ResultSet rs;
+	
+	//MemberDAO memberDAO = new MemberDAO();
+	private List<Member> list;
+	
+	public MemberDAO() {
+		try {
+			Class.forName("org.h2.Driver");
+			con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/springboot","sa","");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return;
+		}catch(SQLException e) {
+			System.out.println("DB 연결 오류");
+			e.printStackTrace();
+			return;
+		}
+		
+	}
+	
+	public MemberDAO getMembers() {
+		List<MemberDAO> list;
+		try {
+			psmt = con.prepareStatement("select * from member");
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int id = rs.getInt("id");
+				String pass = rs.getString("pass");
+				String name = rs.getString("name");	
+				Date date = rs.getDate("REGIDATE");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	
+	public Member getMember(Integer id) {
+		for (Member m : list) {
+			if (m.getId() == id)
+				return m;
+		}
+		return null;
+	}
+	/*
+	public Member addMember(Member member) {
+		member.setId(list.size() + 1);
+		member.setRegidate(new Date());
+		list.add(member);
+		return member;
+	}
+
+	public Member updateMember(Member member) {
+		for (Member m : list) {
+			if (m.getId() == member.getId()) {
+				m.setName(member.getName());
+				m.setPass(member.getPass());
+				return m;
+			}
+		}
+		return null;
+	}
+
+	public Member deleteMember(Integer id) {
+		for (Member m : list) {
+			if (m.getId() == id) {
+				list.remove(m);
+				return m;
+			}
+		}
+		return null;
+	}
+	*/
+}
