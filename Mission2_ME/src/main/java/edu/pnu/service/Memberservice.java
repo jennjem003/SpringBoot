@@ -20,7 +20,7 @@ public class Memberservice {
 	public Member getMember(Integer id) {
 		return memberDAO.getMember(id);
 	}
-	public Member addMember() {
+	public Member addMember(Member member) {
 		// TODO Auto-generated method stub
 		return memberDAO.addMember(null);
 	}

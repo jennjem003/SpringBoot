@@ -91,13 +91,62 @@ public class MemberDAO {
 	}
 	
 	public Member addMember(Member member) {
+	    try {
+	        psmt = con.prepareStatement("insert into member (name,pass) values (?,?)");
+	        //psmt.setInt(1, member.getId());
+	        psmt.setString(2, member.getName());
+	        psmt.setString(3, member.getPass());
+	        //psmt.setDate(4, member.new Date());
+	        int result = psmt.executeUpdate();
+	        if (result == 1) {
+	            return member;
+	        } else {
+	            return null;
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    } finally {
+	        try {
+	            if (rs != null) rs.close();
+	            if (psmt != null) psmt.close();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	}
+
+
+	/*
+	public Member addMember(Member member) {
+		
+		Member member1 = new Member();
+		
 		try {
+			psmt = con.prepareStatement("insert into member (id,name,pass,regidate) values (?,?,?,?)");
+			int result = psmt.executeUpdate();
+			//rs = psmt.executeUpdate();
+			while(rs.next()){
+				member.setId(rs.getInt("id"));
+				member.setPass((rs.getString("pass")));
+				member.setName((rs.getString("name")));	
+				member.setRegidate( (rs.getDate("REGIDATE")));
+			}
 			
 		}catch (Exception e) {
-			// TODO: handle exception
+			try {
+				rs.close();
+				psmt.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
 		}
-		return null;
+		return member;
+		}
 	}
+	*/
 	/*
 	public Member updateMember(Member member) {
 		for (Member m : list) {

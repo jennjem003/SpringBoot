@@ -49,13 +49,13 @@ public class Membercontroller {
 	@PostMapping("/member")
 	public Member addMember(Member member) {
 		log.info("addMember()");
-		return memberservice.addMember();
+		return memberservice.addMember(member);
 	}
-/*
+	/*
 	@PutMapping("/member")
-	public MemberVO updateMember(MemberVO member) {
+	public Member updateMember(Member member) {
 		log.info("updateMember()");
-		return memberService.updateMember(member);
+		return memberservice.updateMember(member);
 	}
 	
 	@DeleteMapping("/member/{id}")
