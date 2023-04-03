@@ -39,6 +39,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\SW\Downloads\mission5\Mission5"/>
 			<item value="C:\Users\SW\Downloads\mission2"/>
 			<item value="C:\Users\SW\Downloads\mission1_1\Mission1_sol"/>
 		</list>
