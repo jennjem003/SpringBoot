@@ -3,6 +3,7 @@
 	<persistence-unit name="Chapter04">
 	
 		<class>com.rubypaper.domain.Board</class>
+		<class>com.rubypaper.domain.Board1</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
 			<property name="javax.persistence.jdbc.user" value="sa"/>
@@ -15,7 +16,7 @@
 			<property name="hibernate.format_sql" value="true"/> <!-- 밑으로 내려써주는거 -->
 			<property name="hibernate.use_sql_comments" value="false"/>
 			<property name="hibernate.id.new_generator_mappings" value="true"/>
-			<property name="hibernate.hbm2ddl.auto" value="create"/> <!-- 1:1로 맵핑되는 거를 만들어줄것이냐 말것이냐를 결정해준다.일할때는 절대 쓰면 안된다. -->
+			<property name="hibernate.hbm2ddl.auto" value="update"/> <!-- 1:1로 맵핑되는 거를 만들어줄것이냐 말것이냐를 결정해준다.일할때는 절대 쓰면 안된다. -->
 		</properties>
 	
 	</persistence-unit>
