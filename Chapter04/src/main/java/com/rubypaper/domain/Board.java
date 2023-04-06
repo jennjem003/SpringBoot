@@ -50,4 +50,5 @@ public class Board {
 	@ColumnDefault("0")
 	private Long cnt;
 	
+	
 }
