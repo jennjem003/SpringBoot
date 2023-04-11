@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\SW\Documents\SpringBootQuickStart\Chapter06\src\main\java\edu\pnu\domain\Board.java"/>
 			<item value="C:\Users\SW\Documents\SpringBootQuickStart\Chapter04\src\main\java\com\rubypaper\domain"/>
 		</list>
 		<list key="projectNameTemplate">
